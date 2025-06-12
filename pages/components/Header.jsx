@@ -1,5 +1,6 @@
-// components/Header.jsx
+"use client";
 import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const menuItems = [
   { name: "Home", submenu: ["Subhome 1", "Subhome 2"] },
@@ -11,52 +12,111 @@ const menuItems = [
 
 export default function Header() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
   return (
-    <header className="bg-white text-black px-8 py-4 flex justify-between items-center shadow-md z-50 relative">
-      {/* Logo */}
-      <div className="text-2xl font-bold flex items-center space-x-2">
-        <img src="/images/7th.png" alt="logo" className="h-20" />
+    <header className="bg-white shadow-md fixed w-full top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4">
+        {/* Logo */}
+        <div className="flex items-center">
+          <img src="/images/7th.png" alt="Logo" className="h-14 w-auto" />
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8 text-lg font-medium">
+          {menuItems.map((item, index) => (
+            <div
+              key={item.name}
+              className="relative group"
+              onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
+            >
+              <div className="flex items-center space-x-1 cursor-pointer">
+                <span>{item.name}</span>
+                {item.submenu && <ChevronDown className="w-4 h-4" />}
+              </div>
+              <div className="absolute top-full left-0 w-full h-[2px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              {activeIndex === index && item.submenu && (
+                <div className="absolute top-full mt-2 w-40 bg-white shadow-lg rounded-md z-30 py-2">
+                  {item.submenu.map((sub) => (
+                    <div
+                      key={sub}
+                      className="px-4 py-2 hover:bg-yellow-400 hover:text-white cursor-pointer"
+                    >
+                      {sub}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        {/* Desktop Social Icons */}
+        <div className="hidden md:flex space-x-4 text-xl text-black">
+          <i className="fab fa-instagram hover:text-yellow-400 transition" />
+          <i className="fab fa-linkedin hover:text-yellow-400 transition" />
+          <i className="fab fa-facebook hover:text-yellow-400 transition" />
+        </div>
+
+        {/* Hamburger Menu Button */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden focus:outline-none"
+        >
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Navbar */}
-      <nav className="flex items-center space-x-6 text-xl font-medium">
-        {menuItems.map((item, index) => (
-          <div
-            key={item.name}
-            className="group relative cursor-pointer"
-            onMouseEnter={() => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(null)}
-          >
-            <span className="flex items-center space-x-1">
-              <span>{item.name}</span>
-              {item.submenu && (
-                <i className="fas fa-chevron-down text-xs ml-1" />
-              )}
-            </span>
-            <span className="absolute top-full left-0 w-full h-[2px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-
-            {activeIndex === index && item.submenu && (
-              <div className="absolute top-full left-0 mt-2 w-40 bg-white rounded-md shadow-lg py-2 z-20">
-                {item.submenu.map((subItem) => (
-                  <div
-                    key={subItem}
-                    className="px-4 py-2 text-black hover:bg-yellow-400 hover:text-white cursor-pointer"
-                  >
-                    {subItem}
-                  </div>
-                ))}
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-white w-full transition-all duration-300 ${
+          mobileOpen ? "max-h-screen pb-6" : "max-h-0 overflow-hidden"
+        }`}
+      >
+        <div className="px-4">
+          {menuItems.map((item, index) => (
+            <div key={item.name} className="border-b py-3">
+              <div
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() =>
+                  setMobileDropdown(mobileDropdown === index ? null : index)
+                }
+              >
+                <span className="font-medium">{item.name}</span>
+                {item.submenu && (
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      mobileDropdown === index ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
               </div>
-            )}
-          </div>
-        ))}
-      </nav>
 
-      {/* Social Icons */}
-      <div className="flex space-x-4 text-xl text-black">
-        <i className="fab fa-instagram hover:text-yellow-400 transition" />
-        <i className="fab fa-linkedin hover:text-yellow-400 transition" />
-        <i className="fab fa-facebook hover:text-yellow-400 transition" />
+              {/* Mobile Submenu */}
+              {item.submenu && mobileDropdown === index && (
+                <div className="pl-4 pt-2 space-y-2">
+                  {item.submenu.map((sub) => (
+                    <div
+                      key={sub}
+                      className="text-sm text-gray-700 hover:text-yellow-500"
+                    >
+                      {sub}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* Mobile Social Icons */}
+          <div className="flex justify-center space-x-5 pt-5 text-2xl text-black">
+            <i className="fab fa-instagram hover:text-yellow-400 transition" />
+            <i className="fab fa-linkedin hover:text-yellow-400 transition" />
+            <i className="fab fa-facebook hover:text-yellow-400 transition" />
+          </div>
+        </div>
       </div>
     </header>
   );
