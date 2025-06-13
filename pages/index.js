@@ -12,7 +12,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 
 const menuItems = [
-  { name: "Home", submenu: ["Subhome 1", "Subhome 2"] },
+  { name: "Home" },
   { name: "Project", submenu: ["Project A", "Project B"] },
   { name: "Services", submenu: ["Service 1", "Service 2"] },
   { name: "Contact" },
