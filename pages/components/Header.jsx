@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const menuItems = [
@@ -15,9 +15,32 @@ export default function Header() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowHeader(false); // scroll down
+      } else {
+        setShowHeader(true); // scroll up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50">
+    <header
+      className={`bg-white shadow-md fixed w-full top-0 z-50 transition-transform duration-300 ${
+        showHeader ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center">
@@ -56,9 +79,9 @@ export default function Header() {
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex space-x-4 text-xl text-black">
-          <i className="fab fa-instagram hover:text-yellow-400 transition duration-200" />
-          <i className="fab fa-linkedin hover:text-yellow-400 transition duration-200" />
-          <i className="fab fa-facebook hover:text-yellow-400 transition duration-200" />
+          <i className="fab fa-instagram hover:text-yellow-400 transition" />
+          <i className="fab fa-linkedin hover:text-yellow-400 transition" />
+          <i className="fab fa-facebook hover:text-yellow-400 transition" />
         </div>
 
         {/* Hamburger Menu Button */}
@@ -95,7 +118,6 @@ export default function Header() {
                 )}
               </div>
 
-              {/* Mobile Submenu */}
               {item.submenu && mobileDropdown === index && (
                 <div className="pl-4 pt-2 space-y-2">
                   {item.submenu.map((sub) => (

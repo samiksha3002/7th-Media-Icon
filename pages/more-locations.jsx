@@ -9,32 +9,28 @@ const moreBillboards = [
     title: "Burj Khalifa Display",
     location: "Dubai, UAE",
     traffic: "500K+ daily viewers",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    image: "/Images/Final1.jpg",
   },
   {
     id: 2,
     title: "Champs-Élysées Billboard",
     location: "Paris, France",
     traffic: "350K+ daily viewers",
-    image:
-      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80",
+    image: "/Images/Final2.jpg",
   },
   {
     id: 3,
     title: "Marine Drive Display",
     location: "Mumbai, India",
     traffic: "420K+ daily viewers",
-    image:
-      "https://images.unsplash.com/photo-1549921296-3a6b80bd5f67?auto=format&fit=crop&w=800&q=80",
+    image: "/Images/Final3.jpg",
   },
   {
     id: 4,
     title: "Opera House Banner",
     location: "Sydney, Australia",
     traffic: "280K+ daily viewers",
-    image:
-      "https://images.unsplash.com/photo-1526481280690-26f591a3ed2e?auto=format&fit=crop&w=800&q=80",
+    image: "/Images/Final4.jpg",
   },
 ];
 
