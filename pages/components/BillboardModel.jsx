@@ -1,6 +1,5 @@
 // components/BillboardModel.jsx
-import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useRef } from "react";
 
 export function BillboardModel() {
   const ref = useRef();

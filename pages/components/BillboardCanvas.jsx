@@ -1,8 +1,6 @@
 // components/BillboardCanvas.jsx
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage } from "@react-three/drei";
 import { Suspense } from "react";
 import { BillboardModel } from "./BillboardModel"; // we'll create this next
 
