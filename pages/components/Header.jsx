@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -24,7 +25,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 text-lg font-medium">
+        <nav className="hidden md:flex items-center space-x-8 text-base font-medium text-gray-800">
           {menuItems.map((item, index) => (
             <div
               key={item.name}
@@ -32,17 +33,17 @@ export default function Header() {
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
-              <div className="flex items-center space-x-1 cursor-pointer">
+              <div className="flex items-center space-x-1 cursor-pointer hover:text-yellow-500 transition">
                 <span>{item.name}</span>
                 {item.submenu && <ChevronDown className="w-4 h-4" />}
               </div>
               <div className="absolute top-full left-0 w-full h-[2px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               {activeIndex === index && item.submenu && (
-                <div className="absolute top-full mt-2 w-40 bg-white shadow-lg rounded-md z-30 py-2">
+                <div className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-30 py-2">
                   {item.submenu.map((sub) => (
                     <div
                       key={sub}
-                      className="px-4 py-2 hover:bg-yellow-400 hover:text-white cursor-pointer"
+                      className="px-4 py-2 hover:bg-yellow-400 hover:text-white cursor-pointer transition"
                     >
                       {sub}
                     </div>
@@ -55,9 +56,9 @@ export default function Header() {
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex space-x-4 text-xl text-black">
-          <i className="fab fa-instagram hover:text-yellow-400 transition" />
-          <i className="fab fa-linkedin hover:text-yellow-400 transition" />
-          <i className="fab fa-facebook hover:text-yellow-400 transition" />
+          <i className="fab fa-instagram hover:text-yellow-400 transition duration-200" />
+          <i className="fab fa-linkedin hover:text-yellow-400 transition duration-200" />
+          <i className="fab fa-facebook hover:text-yellow-400 transition duration-200" />
         </div>
 
         {/* Hamburger Menu Button */}
@@ -71,8 +72,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white w-full transition-all duration-300 ${
-          mobileOpen ? "max-h-screen pb-6" : "max-h-0 overflow-hidden"
+        className={`md:hidden bg-white w-full transition-all duration-300 overflow-hidden ${
+          mobileOpen ? "max-h-screen pb-6" : "max-h-0"
         }`}
       >
         <div className="px-4">
@@ -84,7 +85,7 @@ export default function Header() {
                   setMobileDropdown(mobileDropdown === index ? null : index)
                 }
               >
-                <span className="font-medium">{item.name}</span>
+                <span className="font-medium text-gray-800">{item.name}</span>
                 {item.submenu && (
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -100,7 +101,7 @@ export default function Header() {
                   {item.submenu.map((sub) => (
                     <div
                       key={sub}
-                      className="text-sm text-gray-700 hover:text-yellow-500"
+                      className="text-sm text-gray-700 hover:text-yellow-500 transition"
                     >
                       {sub}
                     </div>

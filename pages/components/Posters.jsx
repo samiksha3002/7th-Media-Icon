@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const postersData = [
   {
     id: 1,
-    src: "Images/img6.jpg",
+    src: "Images/Final6.jpg",
     alt: "Billboard 1",
     description: "Parul University",
   },
@@ -18,19 +18,24 @@ const postersData = [
   },
   {
     id: 3,
-    src: "Images/img10.jpg",
+    src: "Images/Final9.jpg",
     alt: "Billboard 3",
     description: "Akash Reapeter Courses",
   },
   {
     id: 4,
-    src: "Images/img5.jpg",
+    src: "Images/Final10.jpg",
     alt: "Billboard 4",
     description: "Next-gen branding with impact",
   },
 ];
 
-const colSpanClasses = ["col-span-8", "col-span-6", "col-span-6", "col-span-8"];
+const colSpanClasses = [
+  "lg:col-span-8",
+  "lg:col-span-6",
+  "lg:col-span-6",
+  "lg:col-span-8",
+];
 
 export default function Posters() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -41,12 +46,12 @@ export default function Posters() {
         Stunning Posters Showcase
       </h2>
 
-      <div className="grid grid-cols-14 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-14 gap-6 max-w-7xl mx-auto">
         {postersData.map((poster, index) => (
           <motion.div
             key={poster.id}
             className={`${
-              colSpanClasses[index] || "col-span-6"
+              colSpanClasses[index] || "lg:col-span-6"
             } relative rounded-xl overflow-hidden cursor-pointer group`}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +64,7 @@ export default function Posters() {
               alt={poster.alt}
               width={800}
               height={400}
-              className="object-cover rounded-xl w-full h-[400px] transition-filter duration-300"
+              className="object-cover rounded-xl w-full h-64 sm:h-80 md:h-96 transition duration-300"
               style={{
                 filter: hoveredIndex === index ? "grayscale(100%)" : "none",
               }}
@@ -67,29 +72,18 @@ export default function Posters() {
               whileHover={{ scale: 1.03, rotate: 0.5 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
+
+            {/* Hover Text (Desktop only) */}
             {hoveredIndex === index && (
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "30px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  backgroundColor: "white",
-                  padding: "14px 24px",
-                  borderRadius: "16px",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                  maxWidth: "80%",
-                  textAlign: "center",
-                  fontWeight: "600",
-                  fontSize: "1rem",
-                  color: "#1a202c",
-                  userSelect: "none",
-                  pointerEvents: "none",
-                }}
-              >
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-6 py-3 rounded-xl shadow-md text-sm font-semibold text-gray-800 hidden sm:block pointer-events-none">
                 {poster.description}
               </div>
             )}
+
+            {/* Always show text on mobile for accessibility */}
+            <div className="sm:hidden mt-3 text-center text-base font-medium text-gray-800">
+              {poster.description}
+            </div>
           </motion.div>
         ))}
       </div>

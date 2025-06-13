@@ -9,6 +9,7 @@ import Posters from "./components/Posters";
 import Customer from "./components/Customer";
 import Location from "./components/Location";
 import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
 
 const menuItems = [
   { name: "Home", submenu: ["Subhome 1", "Subhome 2"] },
@@ -34,22 +35,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
-        style={{ backgroundImage: "url('/Images/Hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-light">
-            Reach <strong className="font-bold">Max</strong>
-          </h1>
-          <h1 className="text-5xl md:text-7xl font-light">
-            as a{" "}
-            <span className="text-yellow-400 font-extrabold">Billboard</span>
-          </h1>
-          <h1 className="text-5xl md:text-7xl font-light">Door</h1>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Other Sections */}
       <Features />

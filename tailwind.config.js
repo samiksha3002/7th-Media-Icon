@@ -10,6 +10,9 @@ module.exports = {
       gridTemplateColumns: {
         14: "repeat(14, minmax(0, 1fr))",
       },
+      colors: {
+        gold: "#8B5E3C",
+      },
     },
   },
   plugins: [],

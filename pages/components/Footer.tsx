@@ -16,35 +16,35 @@ const Footer: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-black text-white rounded-t-[40px] p-10"
+      className="bg-black text-white rounded-t-[40px] px-6 py-12 sm:px-8 lg:px-12"
     >
-      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between gap-12 relative">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-12">
         {/* Left section */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:w-1/3"
+          className="lg:w-1/3"
         >
           <div className="flex items-center gap-2 text-xl font-bold mb-4">
             <span className="text-yellow-400 text-2xl">🎲</span>
             <span>7th Media Icon</span>
           </div>
           <p className="text-sm text-gray-300 mb-4">
-            Its gives us Immense pleasure introduce ourselves among the the top
-            Business Partners in Outdoor Advertising field in all Maharashtra
-            region. In the 15 years we have been trusted as a reliable Outdoor
-            Media Services provider with strong presence in the region.
+            It gives us immense pleasure to introduce ourselves among the top
+            Business Partners in Outdoor Advertising in Maharashtra. Over 15
+            years, we have built a strong reputation as a trusted provider in
+            this space.
           </p>
-          <div className="flex gap-3 mb-4">
+          <div className="flex gap-3 mb-6">
             {[FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram].map(
               (Icon, index) => (
                 <motion.div
+                  key={index}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  key={index}
                   className="bg-white text-black p-2 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gradient-to-br hover:from-yellow-400 hover:to-orange-500 transition-colors duration-300"
                 >
                   <Icon className="w-4 h-4" />
@@ -53,7 +53,6 @@ const Footer: React.FC = () => {
             )}
           </div>
 
-          {/* Updated Contact info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,39 +60,24 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="text-yellow-400 space-y-3 text-base font-semibold"
           >
-            <motion.p
-              whileHover={{
-                scale: 1.05,
-                color: "#facc15",
-                textShadow: "0 0 8px #facc15",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex items-center gap-2 cursor-pointer"
-            >
-              <span className="text-xl">📞</span> +91 7709006859
-            </motion.p>
-            <motion.p
-              whileHover={{
-                scale: 1.05,
-                color: "#facc15",
-                textShadow: "0 0 8px #facc15",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex items-center gap-2 cursor-pointer"
-            >
-              <span className="text-xl">✉</span> mediaicon07@gmail.com
-            </motion.p>
-            <motion.p
-              whileHover={{
-                scale: 1.05,
-                color: "#facc15",
-                textShadow: "0 0 8px #facc15",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex items-center gap-2 cursor-pointer"
-            >
-              <span className="text-xl">📍</span> Nagpur, Maharashtra, India
-            </motion.p>
+            {[
+              { icon: "📞", text: "+91 7709006859" },
+              { icon: "✉", text: "mediaicon07@gmail.com" },
+              { icon: "📍", text: "Nagpur, Maharashtra, India" },
+            ].map((item, index) => (
+              <motion.p
+                key={index}
+                whileHover={{
+                  scale: 1.05,
+                  color: "#facc15",
+                  textShadow: "0 0 8px #facc15",
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <span className="text-xl">{item.icon}</span> {item.text}
+              </motion.p>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -103,7 +87,7 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:w-1/3"
+          className="lg:w-1/4"
         >
           <h3 className="text-lg font-bold mb-4 tracking-wide">About</h3>
           <ul className="text-gray-300 space-y-2">
@@ -120,32 +104,32 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-black/40 backdrop-blur-md border border-yellow-400 rounded-[32px] p-8 w-[110%] max-w-[1050px] shadow-lg shadow-yellow-400/30 hover:shadow-yellow-400/50 transition-shadow relative -translate-x-1/4 z-10"
+          className="bg-black/40 backdrop-blur-md border border-yellow-400 rounded-[32px] p-6 sm:p-8 w-full lg:w-[110%] max-w-full shadow-lg shadow-yellow-400/30 hover:shadow-yellow-400/50 transition-shadow"
         >
           <h3 className="text-xl font-bold mb-6">Send Now</h3>
           <form className="space-y-5">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
                 placeholder="First Name"
-                className="w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
+                className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
+                className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
             </div>
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
+                className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
               <input
                 type="text"
                 placeholder="Phone Number"
-                className="w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
+                className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
             </div>
             <textarea
