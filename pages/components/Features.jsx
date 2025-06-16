@@ -13,19 +13,19 @@ const googleFontLink = (
 const features = [
   {
     image: "/Images/billboard.jpg",
-    title: "Billboard Targeting",
+    title: "Billboard ",
     description:
       "Reach more customers with targeted billboard locations tailored for your business.",
   },
   {
     image: "/Images/IBS.jpg",
-    title: "Creative Campaigns",
+    title: "Inovative Banner Stands (IBS)",
     description:
       "Design eye-catching campaigns that capture attention and boost your brand presence.",
   },
   {
     image: "/Images/pole.jpg",
-    title: "Performance Analytics",
+    title: "Pole Kiosks",
     description:
       "Measure impact with detailed analytics and optimize your marketing strategy.",
   },

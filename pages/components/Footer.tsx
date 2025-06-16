@@ -63,7 +63,10 @@ const Footer: React.FC = () => {
             {[
               { icon: "📞", text: "+91 7709006859" },
               { icon: "✉", text: "mediaicon07@gmail.com" },
-              { icon: "📍", text: "Nagpur, Maharashtra, India" },
+              {
+                icon: "📍",
+                text: "Plot NO.555B Wathoda Road ,Hirwi Layout , Nagpur -440008",
+              },
             ].map((item, index) => (
               <motion.p
                 key={index}
@@ -98,7 +101,7 @@ const Footer: React.FC = () => {
           </ul>
         </motion.div>
 
-        {/* Contact form */}
+        {/* Contact form with Web3Forms */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -107,38 +110,60 @@ const Footer: React.FC = () => {
           className="bg-black/40 backdrop-blur-md border border-yellow-400 rounded-[32px] p-6 sm:p-8 w-full lg:w-[110%] max-w-full shadow-lg shadow-yellow-400/30 hover:shadow-yellow-400/50 transition-shadow"
         >
           <h3 className="text-xl font-bold mb-6">Send Now</h3>
-          <form className="space-y-5">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="space-y-5"
+          >
+            {/* Web3Forms Access Key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="3452d037-529c-4cd9-80fd-1e46cbf15414"
+            />
+
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
+                name="first_name"
                 placeholder="First Name"
+                required
                 className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
               <input
                 type="text"
+                name="last_name"
                 placeholder="Last Name"
+                required
                 className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
+                required
                 className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
               <input
                 type="text"
+                name="phone"
                 placeholder="Phone Number"
+                required
                 className="w-full sm:w-1/2 p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 outline-none transition"
               />
             </div>
             <textarea
+              name="message"
               placeholder="Write Message"
+              required
               className="w-full p-4 rounded-lg bg-[#1c1c1c] text-white border border-gray-600 placeholder-gray-400 h-28 focus:ring-2 focus:ring-yellow-400 outline-none transition resize-none"
             ></textarea>
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              type="submit"
               className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-4 w-full rounded-full transition"
             >
               Send Message →
@@ -155,7 +180,7 @@ const Footer: React.FC = () => {
         viewport={{ once: true }}
         className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400"
       >
-        © 2025 7th Media Icon. All rights reserved.
+        © 2014 7th Media Icon. All rights reserved.
       </motion.div>
     </motion.footer>
   );

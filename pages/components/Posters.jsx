@@ -8,25 +8,25 @@ const postersData = [
     id: 1,
     src: "Images/Final6.jpg",
     alt: "Billboard 1",
-    description: "Parul University",
+    description: "Manish Nagar ,D-mart",
   },
   {
     id: 2,
     src: "Images/img8.jpg",
     alt: "Billboard 2",
-    description: "Amazon",
+    description: "Sadar Flyover",
   },
   {
     id: 3,
     src: "Images/Final9.jpg",
     alt: "Billboard 3",
-    description: "Akash Reapeter Courses",
+    description: "CA road ,Agrasen Chowk",
   },
   {
     id: 4,
     src: "Images/Final10.jpg",
     alt: "Billboard 4",
-    description: "Next-gen branding with impact",
+    description: "Wadi flyover , Nagpur-Amravati road",
   },
 ];
 

@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import link from "next/link";
 
 const menuItems = [
-  { name: "Home", submenu: ["Subhome 1", "Subhome 2"] },
-  { name: "Project", submenu: ["Project A", "Project B"] },
-  { name: "Services", submenu: ["Service 1", "Service 2"] },
-  { name: "Contact" },
-  { name: "About Us" },
+  { name: "Home", href: "/" },
+  { name: "Latest Campaigns", href: "/project" },
+  { name: "Feautures", href: "/Features" },
+  { name: "Contact", href: "/Footer" },
+  { name: "About Us", href: "/about" },
 ];
 
 export default function Header() {
