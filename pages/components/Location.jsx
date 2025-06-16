@@ -7,30 +7,30 @@ import Link from "next/link"; // ✅ Correct import for Next.js
 const billboards = [
   {
     id: 1,
-    title: "Times Square, NYC",
+    title: "Sadar Flyover",
     location: "Nagpur, Maharashtra",
-    traffic: "250K+ daily viewers",
+    traffic: "3Lacs+ daily viewers",
     image: "Images/img8.jpg",
   },
   {
     id: 2,
-    title: "Shibuya Crossing",
+    title: "Pratap Nagar",
     location: "Nagpur, Maharashtra",
-    traffic: "300K+ daily viewers",
+    traffic: "2.5Lacs+ daily viewers",
     image: "Images/img3.jpg",
   },
   {
     id: 3,
-    title: "Piccadilly Circus",
+    title: "Manewada Road ",
     location: "Nagpur, Maharashtra",
-    traffic: "200K+ daily viewers",
+    traffic: "2.5Lacs+ daily viewers",
     image: "Images/img4.jpg",
   },
   {
     id: 4,
-    title: "Downtown LA Billboard",
+    title: "Sitabuldi flyover",
     location: "Nagpur, Maharashtra",
-    traffic: "180K+ daily viewers",
+    traffic: "3.5Lacs+ daily viewers",
     image: "Images/img1.jpg",
   },
 ];
