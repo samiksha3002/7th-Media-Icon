@@ -94,10 +94,9 @@ const Footer: React.FC = () => {
         >
           <h3 className="text-lg font-bold mb-4 tracking-wide">About</h3>
           <ul className="text-gray-300 space-y-2">
-            <li>Leadership</li>
-            <li>Diversity</li>
-            <li>Partners</li>
-            <li>ESG</li>
+            <li>Projects</li>
+            <li>Features</li>
+            <li>Locations</li>
           </ul>
         </motion.div>
 

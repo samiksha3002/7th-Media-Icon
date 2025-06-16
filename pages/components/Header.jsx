@@ -7,9 +7,8 @@ import link from "next/link";
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "Latest Campaigns", href: "/project" },
-  { name: "Feautures", href: "/Features" },
+  { name: "Feautures", href: "/Media" },
   { name: "Contact", href: "/Footer" },
-  { name: "About Us", href: "/about" },
 ];
 
 export default function Header() {

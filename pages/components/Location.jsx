@@ -17,7 +17,7 @@ const billboards = [
     title: "Pratap Nagar",
     location: "Nagpur, Maharashtra",
     traffic: "2.5Lacs+ daily viewers",
-    image: "Images/img3.jpg",
+    image: "Images/Pratap Nagar.jpg",
   },
   {
     id: 3,

@@ -8,7 +8,7 @@ const postersData = [
     id: 1,
     src: "Images/Final6.jpg",
     alt: "Billboard 1",
-    description: "Manish Nagar ,D-mart",
+    description: "Manish Nagar ,D-Mart",
   },
   {
     id: 2,
@@ -20,13 +20,13 @@ const postersData = [
     id: 3,
     src: "Images/Final9.jpg",
     alt: "Billboard 3",
-    description: "CA road ,Agrasen Chowk",
+    description: "CA Road ,Agrasen Chowk",
   },
   {
     id: 4,
     src: "Images/Final10.jpg",
     alt: "Billboard 4",
-    description: "Wadi flyover , Nagpur-Amravati road",
+    description: "Wadi Flyover , Nagpur-Amravati Road",
   },
 ];
 

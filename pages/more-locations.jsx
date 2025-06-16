@@ -6,30 +6,30 @@ import { motion } from "framer-motion";
 const moreBillboards = [
   {
     id: 1,
-    title: "Burj Khalifa Display",
+    title: "Airport Road",
     location: "Dubai, UAE",
-    traffic: "500K+ daily viewers",
+    traffic: "2.5Lacs+ daily viewers",
     image: "/Images/Final1.jpg",
   },
   {
     id: 2,
-    title: "Champs-Élysées Billboard",
+    title: "Near Athara Nagari 7 ,zudio mall",
     location: "Paris, France",
-    traffic: "350K+ daily viewers",
+    traffic: "3.5Lacs+ daily viewers",
     image: "/Images/Final2.jpg",
   },
   {
     id: 3,
-    title: "Marine Drive Display",
+    title: "Dighori Road",
     location: "Mumbai, India",
-    traffic: "420K+ daily viewers",
+    traffic: "3Lacs+ daily viewers",
     image: "/Images/Final3.jpg",
   },
   {
     id: 4,
-    title: "Opera House Banner",
+    title: "Hingna Road",
     location: "Sydney, Australia",
-    traffic: "280K+ daily viewers",
+    traffic: "4Lacs+ daily viewers",
     image: "/Images/Final4.jpg",
   },
 ];
