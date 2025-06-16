@@ -38,19 +38,42 @@ const Footer: React.FC = () => {
             this space.
           </p>
           <div className="flex gap-3 mb-6">
-            {[FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram].map(
-              (Icon, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="bg-white text-black p-2 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gradient-to-br hover:from-yellow-400 hover:to-orange-500 transition-colors duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </motion.div>
-              )
-            )}
+            {[
+              {
+                href: "https://facebook.com/yourpage",
+                icon: FaFacebookF,
+                label: "Facebook",
+              },
+              {
+                href: "https://x.com/yourpage",
+                icon: FaXTwitter,
+                label: "Twitter",
+              },
+              {
+                href: "https://linkedin.com/in/yourprofile",
+                icon: FaLinkedinIn,
+                label: "LinkedIn",
+              },
+              {
+                href: "https://www.instagram.com/7thmediaicon?igsh=dXlicmUxbzV3bmpq",
+                icon: FaInstagram,
+                label: "Instagram",
+              },
+            ].map(({ href, icon: Icon, label }, index) => (
+              <motion.a
+                key={index}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="bg-white text-black p-2 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gradient-to-br hover:from-yellow-400 hover:to-orange-500 transition-colors duration-300"
+              >
+                <Icon className="w-4 h-4" />
+              </motion.a>
+            ))}
           </div>
 
           <motion.div
@@ -65,7 +88,7 @@ const Footer: React.FC = () => {
               { icon: "✉", text: "mediaicon07@gmail.com" },
               {
                 icon: "📍",
-                text: "Plot NO.555B Wathoda Road ,Hirwi Layout , Nagpur -440008",
+                text: "Plot No 555-B Wathoda Road Hiwari Layout Near Power House Nagpur - 440008",
               },
             ].map((item, index) => (
               <motion.p

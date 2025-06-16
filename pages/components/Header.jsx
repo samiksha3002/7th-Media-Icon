@@ -79,9 +79,27 @@ export default function Header() {
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex space-x-4 text-xl text-black">
-          <i className="fab fa-instagram hover:text-yellow-400 transition" />
-          <i className="fab fa-linkedin hover:text-yellow-400 transition" />
-          <i className="fab fa-facebook hover:text-yellow-400 transition" />
+          <a
+            href="https://instagram.com/https://www.instagram.com/7thmediaicon?igsh=dXlicmUxbzV3bmpq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram hover:text-yellow-400 transition" />
+          </a>
+          <a
+            href="https://linkedin.com/in/YOUR_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin hover:text-yellow-400 transition" />
+          </a>
+          <a
+            href="https://facebook.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook hover:text-yellow-400 transition" />
+          </a>
         </div>
 
         {/* Hamburger Menu Button */}
