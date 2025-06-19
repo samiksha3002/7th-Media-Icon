@@ -44,7 +44,7 @@ export default function CompanyTrustSection() {
         viewport={{ once: true }}
         className="overflow-hidden mb-16"
       >
-        <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
+        <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">w
           {[...logos, ...logos].map((logo, index) => (
             <Image
               key={index}
@@ -52,7 +52,7 @@ export default function CompanyTrustSection() {
               alt={`Company logo ${index}`}
               width={120}
               height={60}
-              className="h-14 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+              className="h-14 w-auto object-contain transition duration-300"
             />
           ))}
         </div>

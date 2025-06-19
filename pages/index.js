@@ -16,7 +16,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Total wait time: 3.7s to allow preloader fadeout
     const timer = setTimeout(() => setLoading(false), 3700);
     return () => clearTimeout(timer);
   }, []);
@@ -28,16 +27,27 @@ export default function Home() {
       {!loading && (
         <main className="animate-fadeIn transition-opacity duration-700 ease-out">
           <Header />
-          <HeroSection />
-          <Features />
+
+          <section id="home">
+            <HeroSection />
+          </section>
+
+          <section id="media">
+            <Features />
+          </section>
 
           <Customer />
           <Posters />
           <CompanyTrustSection />
           <Location />
-          <Project />
 
-          <Footer />
+          <section id="project">
+            <Project />
+          </section>
+
+          <section id="contact">
+            <Footer />
+          </section>
         </main>
       )}
     </>

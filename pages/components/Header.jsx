@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import link from "next/link";
 
 const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Latest Campaigns", href: "/project" },
-  { name: "Feautures", href: "/Media" },
-  { name: "Contact", href: "/Footer" },
+  { name: "Home", href: "#home" },
+  { name: "Latest Campaigns", href: "#project" },
+  { name: "Features", href: "#media" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -21,16 +20,13 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        setShowHeader(false); // scroll down
+        setShowHeader(false);
       } else {
-        setShowHeader(true); // scroll up
+        setShowHeader(true);
       }
-
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -56,23 +52,14 @@ export default function Header() {
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
-              <div className="flex items-center space-x-1 cursor-pointer hover:text-yellow-500 transition">
+              <a
+                href={item.href}
+                className="flex items-center space-x-1 cursor-pointer hover:text-yellow-500 transition"
+              >
                 <span>{item.name}</span>
                 {item.submenu && <ChevronDown className="w-4 h-4" />}
-              </div>
+              </a>
               <div className="absolute top-full left-0 w-full h-[2px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              {activeIndex === index && item.submenu && (
-                <div className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded-md z-30 py-2">
-                  {item.submenu.map((sub) => (
-                    <div
-                      key={sub}
-                      className="px-4 py-2 hover:bg-yellow-400 hover:text-white cursor-pointer transition"
-                    >
-                      {sub}
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </nav>
@@ -80,7 +67,7 @@ export default function Header() {
         {/* Desktop Social Icons */}
         <div className="hidden md:flex space-x-4 text-xl text-black">
           <a
-            href="https://instagram.com/https://www.instagram.com/7thmediaicon?igsh=dXlicmUxbzV3bmpq"
+            href="https://www.instagram.com/7thmediaicon?igsh=dXlicmUxbzV3bmpq"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -120,34 +107,13 @@ export default function Header() {
         <div className="px-4">
           {menuItems.map((item, index) => (
             <div key={item.name} className="border-b py-3">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() =>
-                  setMobileDropdown(mobileDropdown === index ? null : index)
-                }
+              <a
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block font-medium text-gray-800"
               >
-                <span className="font-medium text-gray-800">{item.name}</span>
-                {item.submenu && (
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      mobileDropdown === index ? "rotate-180" : ""
-                    }`}
-                  />
-                )}
-              </div>
-
-              {item.submenu && mobileDropdown === index && (
-                <div className="pl-4 pt-2 space-y-2">
-                  {item.submenu.map((sub) => (
-                    <div
-                      key={sub}
-                      className="text-sm text-gray-700 hover:text-yellow-500 transition"
-                    >
-                      {sub}
-                    </div>
-                  ))}
-                </div>
-              )}
+                {item.name}
+              </a>
             </div>
           ))}
 

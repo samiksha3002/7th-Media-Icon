@@ -19,7 +19,7 @@ const features = [
   },
   {
     image: "/Images/IBS.jpg",
-    title: "Inovative Banner Stands (IBS)",
+    title: "Inovative Banner Stand (IBS)",
     description:
       "Design eye-catching campaigns that capture attention and boost your brand presence.",
   },
@@ -62,7 +62,7 @@ export default function Features() {
           className="max-w-7xl mx-auto text-center relative z-10"
         >
           <p className="text-indigo-600 text-lg font-semibold tracking-wide mb-3 uppercase">
-            Our Features
+            Our Media
           </p>
           <h2
             className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 max-w-4xl mx-auto mb-16"

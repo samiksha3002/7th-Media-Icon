@@ -35,7 +35,7 @@ const Customer = () => {
           Latest Gallery
         </p>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent mt-2">
-          Cybsecure - The Billboard Revolution
+          Trusted by Hundreds. Visible to Millions.
         </h2>
       </motion.div>
 

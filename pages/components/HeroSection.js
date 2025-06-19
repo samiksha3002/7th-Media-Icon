@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden" id="home">
       {/* 🔥 Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -41,18 +40,18 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-            <Link
-              href="/Footer"
+            <a
+              href="#contact"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold shadow transition text-sm sm:text-base"
             >
               Let’s Connect
-            </Link>
-            <Link
-              href="/Project"
+            </a>
+            <a
+              href="#project"
               className="border border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold transition text-sm sm:text-base"
             >
               See Our Work
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
