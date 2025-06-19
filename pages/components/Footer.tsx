@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FaFacebookF,
@@ -28,7 +29,13 @@ const Footer: React.FC = () => {
           className="lg:w-1/3"
         >
           <div className="flex items-center gap-2 text-xl font-bold mb-4">
-            <span className="text-yellow-400 text-2xl">🎲</span>
+            <Image
+              src="https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342955/7th_o3qgii.png" // Update this path as needed
+              alt="7th Media Icon Logo"
+              width={40}
+              height={40}
+              className="rounded-full object-contain"
+            />
             <span>7th Media Icon</span>
           </div>
           <p className="text-sm text-gray-300 mb-4">
@@ -50,7 +57,7 @@ const Footer: React.FC = () => {
                 label: "Twitter",
               },
               {
-                href: "https://linkedin.com/in/yourprofile",
+                href: "https://www.linkedin.com/in/7th-media-icon-496a3436b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 icon: FaLinkedinIn,
                 label: "LinkedIn",
               },
@@ -81,7 +88,7 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-yellow-400 space-y-3 text-base font-semibold"
+            className="text-white-400 space-y-3 text-base font-semibold"
           >
             {[
               { icon: "📞", text: "+91 7709006859" },
@@ -137,7 +144,6 @@ const Footer: React.FC = () => {
             method="POST"
             className="space-y-5"
           >
-            {/* Web3Forms Access Key */}
             <input
               type="hidden"
               name="access_key"

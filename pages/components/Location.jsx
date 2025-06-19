@@ -17,7 +17,7 @@ const billboards = [
     title: "Pratap Nagar",
     location: "Nagpur, Maharashtra",
     traffic: "2.5Lacs+ daily viewers",
-    image: "Images/Pratap Nagar.jpg",
+    image: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342946/Pratap_nagar_q1jsjx.jpg",
   },
   {
     id: 3,

@@ -19,7 +19,7 @@ const features = [
   },
   {
     image: "/Images/IBS.jpg",
-    title: "Inovative Banner Stand (IBS)",
+    title: "Innovative Banner Stand (IBS)",
     description:
       "Design eye-catching campaigns that capture attention and boost your brand presence.",
   },
@@ -68,7 +68,7 @@ export default function Features() {
             className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 max-w-4xl mx-auto mb-16"
             style={{ fontFamily: "'Poppins', sans-serif", lineHeight: 1.1 }}
           >
-            Supercharge Your Business with Billboards
+            Supercharge Your Business with Billboard
           </h2>
 
           <motion.div
