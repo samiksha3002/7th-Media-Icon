@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               alt="7th Media Icon Logo"
               width={40}
               height={40}
-              className="rounded-full object-contain"
+              className=" object-contain"
             />
             <span>7th Media Icon</span>
           </div>
