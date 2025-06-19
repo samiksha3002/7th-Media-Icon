@@ -40,7 +40,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="/images/7th.png" alt="Logo" className="h-14 w-auto" />
+          <img
+            src="https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342665/7th_g599zd.png"
+            alt="Logo"
+            className="h-14 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation */}
