@@ -6,18 +6,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const logos = [
-  "/images/aakash institute.png",
-  "/images/amazon.png",
-  "/images/au small finance bank.png",
-  "/images/big basket.png",
-  "/images/haldirams logo.png",
-  "/images/Mahindra.png",
-  "/images/mc donald.png",
-  "/images/mp birla cement.png",
-  "/images/patanjali.png",
-  "/images/rokde jewellers.png",
-  "/images/tanishq.png",
-  "/images/amazon logo.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342963/amazon_qkr00o.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342961/samsung_knpkvp.webp",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342961/tanishq_rjrmg4.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342960/mp_birla_cement_deeado.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342960/patanjali_vsw3ur.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342960/big_basket_qvc1gv.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342959/rokde_jewellers_muqfln.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342959/Mahindra_gisyaz.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342959/mc_donald_b6rrjk.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342958/haldirams_logo_m0htgm.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342957/au_small_finance_bank_gl1adu.png",
+  "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342956/aakash_institute_x6zpbp.jpg",
 ];
 
 export default function CompanyTrustSection() {
@@ -44,7 +44,8 @@ export default function CompanyTrustSection() {
         viewport={{ once: true }}
         className="overflow-hidden mb-16"
       >
-        <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">w
+        <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
+          w
           {[...logos, ...logos].map((logo, index) => (
             <Image
               key={index}
@@ -67,7 +68,7 @@ export default function CompanyTrustSection() {
         className="max-w-5xl mx-auto relative rounded-3xl overflow-hidden shadow-xl group backdrop-blur-md bg-white/10 border border-white/20"
       >
         <Image
-          src="/images/created.jpg"
+          src="https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750342963/created_b0mvyn.jpg"
           alt="Video Preview"
           width={1200}
           height={600}
