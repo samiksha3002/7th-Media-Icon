@@ -18,7 +18,7 @@ const features = [
       "Reach more customers with targeted billboard locations tailored for your business.",
   },
   {
-    image: "/Images/IBSt.jpg",
+    image: "/Images/IBSY.jpg",
     title: "Innovative Banner Stand (IBS)",
     description:
       "Design eye-catching campaigns that capture attention and boost your brand presence.",
